@@ -1,0 +1,29 @@
+/* ═══════════════════════════════════════════════════════════
+   PAGE TRANSITION — Fade-through on route change
+   ═══════════════════════════════════════════════════════════ */
+
+.page-transition {
+	will-change: opacity, transform;
+}
+
+.page-entering {
+	opacity: 0;
+	transform: translateY(8px);
+}
+
+.page-visible {
+	opacity: 1;
+	transform: translateY(0);
+	transition:
+		opacity var(--motion-medium) var(--ease-out-expo),
+		transform var(--motion-medium) var(--ease-out-expo);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.page-entering,
+	.page-visible {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"words": [
+		"Aakash",
+		"Avenir",
+		"AyuSethu",
+		"esbuild",
+		"FastAPI",
+		"GDSC",
+		"Gudivada",
+		"GVAHCK",
+		"Hyperledger",
+		"MTTD",
+		"Neo4j",
+		"NHIDE",
+		"Plexis",
+		"Prakalp",
+		"RBAC",
+		"Shadcnui",
+		"SIEM",
+		"SRKR",
+		"Venkata",
+		"vite"
+	],
+	"ignorePaths": [
+		"package-lock.json",
+		"pnpm-lock.yaml",
+		"node_modules",
+		"vscode-extension",
+		".git/objects",
+		".vscode",
+		".vscode-insiders",
+		"coverage",
+		"build",
+		"dist",
+		"public",
+		"trace",
+		"**/*.mp4",
+		"**/*.svg",
+		"**/*.mp3",
+		"tsconfig.vitest-temp.json"
+	]
+}

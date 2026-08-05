@@ -1,0 +1,87 @@
+:root {
+	--text-primary: 8rem;
+	--text-secondary: 11rem;
+}
+
+.title {
+	text-align: center;
+	margin: auto;
+	padding: 2rem;
+	width: fit-content;
+	position: sticky;
+	top: 50vh;
+}
+
+.title .primary-text {
+	color: white;
+	font-size: var(--text-primary);
+	margin-bottom: 3rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-family: 'Fugaz One', sans-serif;
+	position: relative;
+	overflow: hidden;
+}
+
+/* One-time shimmer sweep on entrance */
+.title .primary-text::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(
+		90deg,
+		transparent 30%,
+		rgba(255, 255, 255, 0.08) 50%,
+		transparent 70%
+	);
+	animation: title-shimmer 2s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) 0.5s both;
+	pointer-events: none;
+}
+
+@keyframes title-shimmer {
+	from { left: -100%; }
+	to { left: 200%; }
+}
+
+.title .secondary-text {
+	font-size: var(--text-secondary);
+	text-align: end;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+	font-family: 'Fugaz One', sans-serif;
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 3px;
+	-webkit-text-stroke-color: hsl(196, 100%, 56%);
+	text-shadow: 0 0 30px rgba(31, 195, 255, 0.15);
+	animation: text-glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes text-glow-pulse {
+	0%, 100% { text-shadow: 0 0 30px rgba(31, 195, 255, 0.1); }
+	50% { text-shadow: 0 0 50px rgba(31, 195, 255, 0.25); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.title .primary-text::after {
+		animation: none;
+		display: none;
+	}
+
+	.title .secondary-text {
+		animation: none;
+	}
+}
+
+@media screen and (max-width: 700px) {
+	:root {
+		--text-primary: 5rem;
+		--text-secondary: 6rem;
+	}
+	.title {
+		position: relative;
+		top: 0rem;
+	}
+}
